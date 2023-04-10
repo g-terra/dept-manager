@@ -11,6 +11,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.guilherme.android.debtmanager.ui.add_edit_debt.AddEditDebtScreen
 import com.guilherme.android.debtmanager.ui.debt_list.DebtListScreen
+import com.guilherme.android.debtmanager.ui.simulation.SimulationScreen
 import com.guilherme.android.debtmanager.ui.theme.DebtManagerTheme
 import com.guilherme.android.debtmanager.util.Routes
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,8 +27,8 @@ class MainActivity : ComponentActivity() {
                 NavHost(
                     navController = navController,
                     startDestination = Routes.DEBT_LIST
-                ){
-                    composable(Routes.DEBT_LIST){
+                ) {
+                    composable(Routes.DEBT_LIST) {
                         DebtListScreen(onNavigate = {
                             navController.navigate(it.route)
                         })
@@ -45,7 +46,25 @@ class MainActivity : ComponentActivity() {
                             onPopBackStack = {
                                 navController.popBackStack()
                             },
-                            viewModel = hiltViewModel() // Pass the viewModel
+                            onNavigate = {
+                                navController.navigate(it.route)
+                            },
+                            viewModel = hiltViewModel()
+                        )
+                    }
+
+                    composable(
+                        Routes.SIMULATION + "?debtId={debtId}",
+                        arguments = listOf(navArgument("debtId") {
+                            type = NavType.IntType
+                            defaultValue = -1
+                        })
+                    ) {
+                        SimulationScreen(
+                            onPopBackStack = {
+                                navController.popBackStack()
+                            },
+                            viewModel = hiltViewModel()
                         )
                     }
 

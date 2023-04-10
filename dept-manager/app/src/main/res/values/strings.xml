@@ -1,13 +1,25 @@
 <resources>
     <string name="app_name">Debt Manager</string>
-    <string name="debtor">Debtor:</string>
-    <string name="amount">Amount:</string>
+    <string name="decimal_format">0.00</string>
+    <string name="debtor">Debtor</string>
+    <string name="amount">Amount</string>
     <string name="debts">Debts</string>
     <string name="new_debt">New Debt</string>
     <string name="simulate">Simulate</string>
     <string name="delete">Delete</string>
     <string name="delete_confirmation">Are you sure you want to delete this debt? This action cannot be undone.</string>
     <string name="total_debts">Total debts</string>
-    <string name="sum_debts">The sum of all debts is: %1$s</string>
+    <string name="sum_debts">The sum of all debts is: </string>
     <string name="ok">OK</string>
+    <string name="simulation_screen_title">Debt Repayment Simulation</string>
+    <string name="interest_rate_label">Interest Rate (%)</string>
+    <string name="repayment_rate_label">Repayment Rate: Dollars/second</string>
+    <string name="start_simulation">Start Simulation</string>
+    <string name="stop_simulation">Stop Simulation</string>
+    <string name="simulation_results_header">Payments</string>
+    <string name="simulation_result_column_installment">Installment</string>
+    <string name="simulation_result_column_payment">Payment</string>
+    <string name="simulation_result_column_remaining">Remaining</string>
+    <string name="total_interest_paid_label">Total Interest Paid:</string>
+    <string name="Back">Back</string>
 </resources>

@@ -21,6 +21,7 @@ import com.guilherme.android.debtmanager.data.Debt
 import com.guilherme.android.debtmanager.ui.misc.Dialog
 import com.guilherme.android.debtmanager.ui.misc.ScreenHeader
 import com.guilherme.android.debtmanager.util.UiEvent
+import java.text.DecimalFormat
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -51,7 +52,7 @@ fun DebtListScreen(
         }
 
         if (viewModel.showTotalDebtDialog) {
-            ShowTotalsDialog(debts,viewModel)
+            ShowTotalsDialog(debts, viewModel)
         }
 
         DebtListContent(debts, viewModel)
@@ -108,14 +109,17 @@ private fun ConfirmDeletionDialog(
 }
 
 @Composable
-private fun ShowTotalsDialog( debts: State<List<Debt>> , viewModel: DebtListViewModel) {
+private fun ShowTotalsDialog(debts: State<List<Debt>>, viewModel: DebtListViewModel) {
     Dialog(
         onConfirm = {
-           viewModel.onEvent(DebtListEvent.CloseTotalDebtDialogClicked)
+            viewModel.onEvent(DebtListEvent.CloseTotalDebtDialogClicked)
         },
         confirmationText = stringResource(R.string.ok),
         heading = stringResource(id = R.string.total_debts),
-        body = stringResource(R.string.sum_debts, debts.value.sumOf { it.amount }),
+        body = "${stringResource(R.string.sum_debts)} ${
+            DecimalFormat(stringResource(R.string.decimal_format)).format(
+                debts.value.sumOf { it.amount })
+        }",
         showCancel = false
     )
 }
