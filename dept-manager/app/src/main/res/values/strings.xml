@@ -10,4 +10,5 @@
     <string name="total_debts">Total debts</string>
     <string name="sum_debts">The sum of all debts is: %1$s</string>
     <string name="ok">OK</string>
+    <string name="simulation_screen_title">Debt Repayment Simulation</string>
 </resources>

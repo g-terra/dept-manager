@@ -17,8 +17,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.guilherme.android.debtmanager.R
-import com.guilherme.android.debtmanager.ui.misc.Dialog
 import com.guilherme.android.debtmanager.ui.misc.DecimalTextField
+import com.guilherme.android.debtmanager.ui.misc.Dialog
 import com.guilherme.android.debtmanager.ui.misc.ScreenHeader
 import com.guilherme.android.debtmanager.util.UiEvent
 
@@ -26,6 +26,7 @@ import com.guilherme.android.debtmanager.util.UiEvent
 @Composable
 fun AddEditDebtScreen(
     onPopBackStack: () -> Unit,
+    onNavigate: (UiEvent.Navigate) -> Unit,
     viewModel: AddEditDebtViewModel = hiltViewModel()
 ) {
 
@@ -46,13 +47,13 @@ fun AddEditDebtScreen(
         viewModel.uiEventFlow.collect { event ->
             when (event) {
                 is UiEvent.PopBackStack -> onPopBackStack()
+                is UiEvent.Navigate -> onNavigate(event)
                 is UiEvent.ShowSnackbar -> {
                     scaffoldState.snackbarHostState.showSnackbar(
                         message = event.message,
                         actionLabel = event.action
                     )
                 }
-                else -> Unit
             }
         }
     }
