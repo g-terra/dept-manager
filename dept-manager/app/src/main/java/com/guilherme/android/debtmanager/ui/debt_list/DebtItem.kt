@@ -9,9 +9,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.guilherme.android.debtmanager.R
 import com.guilherme.android.debtmanager.data.Debt
 
 @Composable
@@ -19,7 +21,6 @@ fun DebtItem(
     debt: Debt,
     modifier: Modifier = Modifier
 ) {
-
     Card(
         modifier = modifier
             .fillMaxWidth()
@@ -27,44 +28,48 @@ fun DebtItem(
         backgroundColor = MaterialTheme.colors.primary,
         elevation = 8.dp,
     ) {
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-
-            Column(
-                modifier = Modifier
-            ) {
-                Row {
-                    Text(
-                        text = "Debtor:",
-                        fontWeight = FontWeight.Bold,
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    Text(text = debt.debtorName)
-
-                }
-                Spacer(Modifier.width(8.dp))
-                Row {
-                    Text(text = "Amount:")
-                    Spacer(Modifier.width(8.dp))
-                    Text(text = debt.amount.toString())
-                }
-            }
-
-
-        }
-
+        DebtItemContent(debt)
     }
-
-
 }
 
-@Preview(showBackground = true, backgroundColor = 0xFFFFFFFF, device = "id:pixel_5")
+@Composable
+private fun DebtItemContent(debt: Debt) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        DebtInfoColumn(debt)
+    }
+}
+
+@Composable
+private fun DebtInfoColumn(debt: Debt) {
+    Column {
+        DebtInfoRow(label = stringResource(R.string.debtor), value = debt.debtorName)
+        Spacer(Modifier.width(8.dp))
+        DebtInfoRow(label = stringResource(R.string.amount), value = debt.amount.toString())
+    }
+}
+
+@Composable
+private fun DebtInfoRow(label: String, value: String) {
+    Row {
+        Text(
+            text = label,
+            fontWeight = FontWeight.Bold,
+        )
+        Spacer(Modifier.width(8.dp))
+        Text(text = value)
+    }
+}
+
+@Preview(
+    showBackground = true,
+    backgroundColor = 0xFFFFFFFF,
+    device = "id:pixel_5")
 @Composable
 fun DebtItemPreview() {
     DebtItem(

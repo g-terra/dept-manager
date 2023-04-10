@@ -73,12 +73,8 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
-
     implementation "androidx.compose.ui:ui-tooling-preview:1.4.1"
 
-    // Compose dependencies
-    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1"
-    implementation "androidx.navigation:navigation-compose:2.6.0-alpha09"
 
     //Dagger Hilt
     implementation 'com.google.dagger:hilt-android:2.44' // Replace with the latest version
@@ -95,8 +91,19 @@ dependencies {
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:2.5.1"
 
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1"
+    implementation "androidx.navigation:navigation-compose:2.6.0-alpha09"
+    androidTestImplementation 'androidx.compose.ui:ui-test:1.5.0-alpha02'
     androidTestImplementation 'androidx.compose.ui:ui-test:1.5.0-alpha02'
     androidTestImplementation 'androidx.test:rules:1.5.0'
+
+    //test
+    testImplementation 'org.mockito:mockito-core:4.1.0'
+    testImplementation 'org.mockito:mockito-inline:4.1.0'
+    testImplementation "android.arch.core:core-testing:1.1.1"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+
 
 }
 

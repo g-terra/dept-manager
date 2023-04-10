@@ -4,11 +4,12 @@ import com.guilherme.android.debtmanager.data.Debt
 
 sealed class DebtListEvent {
 
-    object OnCreateDebtClick : DebtListEvent()
+    object CreateDebtClicked : DebtListEvent()
+    object CalculateTotalDebtClick : DebtListEvent()
+    data class DebtClicked(val debt: Debt) : DebtListEvent()
+    data class DebtDeletionRequested(val debtId: Int) : DebtListEvent()
+    object DebtDeletionConfirmed : DebtListEvent()
+    object DebtDeletionCancelled : DebtListEvent()
+    object CloseTotalDebtDialogClicked : DebtListEvent()
 
-    object OnSimulationClick : DebtListEvent()
-
-    data class OnDebtClick(val debt: Debt) : DebtListEvent()
-
-    data class OnDeleteDebtConfirmation (val debtId: Int): DebtListEvent()
 }

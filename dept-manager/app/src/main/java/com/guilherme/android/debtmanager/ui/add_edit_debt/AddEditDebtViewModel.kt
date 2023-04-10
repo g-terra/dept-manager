@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.guilherme.android.debtmanager.data.Debt
 import com.guilherme.android.debtmanager.data.DebtRepository
+import com.guilherme.android.debtmanager.util.Routes
 import com.guilherme.android.debtmanager.util.UiEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -38,10 +39,8 @@ class AddEditDebtViewModel @Inject constructor(
     private val _shareTextFlow = MutableSharedFlow<String>()
     val shareTextFlow: SharedFlow<String> = _shareTextFlow
 
-
     private val _uiEvent = Channel<UiEvent>()
-    val uiEvent = _uiEvent.receiveAsFlow()
-
+    val uiEventFlow = _uiEvent.receiveAsFlow()
 
     init {
         val debtId = savedStateHandle.get<Int>("debtId") ?: -1
@@ -58,29 +57,19 @@ class AddEditDebtViewModel @Inject constructor(
 
     fun onEvent(event: AddEditDebtEvent) {
         when (event) {
-            is AddEditDebtEvent.OnDebtorNameChange -> handleDebtorNameChange(event)
-            is AddEditDebtEvent.OnAmountChange -> handleAmountChange(event)
-            is AddEditDebtEvent.OnSaveDebtClick -> handleSaveDebt()
-            is AddEditDebtEvent.OnSendNotificationClick -> handleSendNotification()
-            is AddEditDebtEvent.OnSimulateRepaymentClick -> handleSimulateRepayment()
-            is AddEditDebtEvent.OnUndoChangesClick -> handleUndoChanges()
+            is AddEditDebtEvent.DebtorNameChanged -> handleDebtorNameChange(event)
+            is AddEditDebtEvent.AmountChanged -> handleAmountChange(event)
+            is AddEditDebtEvent.SaveDebtClicked -> handleSaveDebt()
+            is AddEditDebtEvent.CloseTotalDebt -> handleSendNotification()
+            is AddEditDebtEvent.SimulateRepaymentClicked -> handleSimulateRepayment()
+            is AddEditDebtEvent.UndoChangesClicked -> handleUndoChanges()
         }
-    }
-
-    private fun handleUndoChanges() {
-        amount = debt?.amount.toString()
-        debtorName = debt?.debtorName ?: ""
-        hasChanged = false
-    }
-
-    private fun handleSimulateRepayment() {
-        sendUiEvent(UiEvent.ShowSnackbar("Simulate repayment"))
     }
 
     private fun handleSendNotification() {
         onShareText(
             """
-            Hey ${debtorName}! 
+            Hey $debtorName! 
             You owe me $amount Zloty.
             Please pay me back as soon as possible. 
             Thanks!
@@ -88,19 +77,18 @@ class AddEditDebtViewModel @Inject constructor(
         )
     }
 
-    private fun handleAmountChange(event: AddEditDebtEvent.OnAmountChange) {
+    private fun handleAmountChange(event: AddEditDebtEvent.AmountChanged) {
         amount = event.amount
         hasChanged = true
     }
 
-    private fun handleDebtorNameChange(event: AddEditDebtEvent.OnDebtorNameChange) {
+    private fun handleDebtorNameChange(event: AddEditDebtEvent.DebtorNameChanged) {
         debtorName = event.name
         hasChanged = true
     }
 
     private fun handleSaveDebt() {
         viewModelScope.launch {
-
             val validateError = getFieldValidationError()
 
             if (validateError.isNotEmpty()) {
@@ -128,7 +116,6 @@ class AddEditDebtViewModel @Inject constructor(
         return ""
     }
 
-
     private fun sendUiEvent(event: UiEvent) {
         viewModelScope.launch {
             _uiEvent.send(event)
@@ -140,7 +127,15 @@ class AddEditDebtViewModel @Inject constructor(
             _shareTextFlow.emit(text)
         }
     }
+
+    private fun handleSimulateRepayment() {
+        sendUiEvent(UiEvent.Navigate(Routes.SIMULATION + "?debtId=${debt?.id}"))
+    }
+
+    private fun handleUndoChanges() {
+        amount = debt?.amount.toString()
+        debtorName = debt?.debtorName ?: ""
+        hasChanged = false
+    }
+
 }
-
-
-

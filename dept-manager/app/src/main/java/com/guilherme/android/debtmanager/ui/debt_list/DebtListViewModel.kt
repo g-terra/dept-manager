@@ -1,5 +1,8 @@
 package com.guilherme.android.debtmanager.ui.debt_list
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.guilherme.android.debtmanager.data.DebtRepository
@@ -16,46 +19,71 @@ class DebtListViewModel @Inject constructor(
     private val debtRepository: DebtRepository
 ) : ViewModel() {
 
+
+
+    private val _uiEventChannel = Channel<UiEvent>()
+    val uiEventFlow = _uiEventChannel.receiveAsFlow()
+
+    var showTotalDebtDialog by mutableStateOf(false)
+        private set
+
+    var showDebtDeleteDialog by mutableStateOf(false)
+        private set
+
+    var selectedId by mutableStateOf(-1)
+        private set
+
     val debts = debtRepository.getDebts()
 
-    private val _uiEvent = Channel<UiEvent>()
-
-    val uiEvent = _uiEvent.receiveAsFlow()
-
     fun onEvent(event: DebtListEvent) {
-        viewModelScope.launch{
+        viewModelScope.launch {
             when (event) {
-                is DebtListEvent.OnDebtClick -> {
+                is DebtListEvent.DebtClicked -> {
                     println("Debt clicked: ${event.debt.id}")
                     sendUiEvent(UiEvent.Navigate(Routes.ADD_EDIT_DEBT + "?debtId=${event.debt.id}"))
-                    return@launch
                 }
-
-                is DebtListEvent.OnCreateDebtClick -> {
+                is DebtListEvent.CreateDebtClicked -> {
                     sendUiEvent(UiEvent.Navigate(Routes.ADD_EDIT_DEBT))
-                    return@launch
                 }
-
-                is DebtListEvent.OnSimulationClick -> {
+                is DebtListEvent.DebtDeletionConfirmed -> {
+                    deleteDebt(selectedId)
+                    resetDeleteDialogState()
                 }
-
-                is DebtListEvent.OnDeleteDebtConfirmation -> {
-                    println("Debt to be deleted: ${event.debtId}")
-                    val toBeDeleted = debtRepository.getDebtById(event.debtId)
-                    debtRepository.deleteDebt(toBeDeleted!!)
-                    return@launch
+                is DebtListEvent.DebtDeletionRequested -> {
+                    showDebtDeleteDialog = true
+                    selectedId = event.debtId
                 }
-
+                is DebtListEvent.DebtDeletionCancelled -> {
+                    resetDeleteDialogState()
+                }
+                is DebtListEvent.CloseTotalDebtDialogClicked -> {
+                    showTotalDebtDialog = false
+                }
+                is DebtListEvent.CalculateTotalDebtClick -> {
+                    showTotalDebtDialog = true
+                }
             }
         }
     }
 
+    private fun resetDeleteDialogState() {
+        showDebtDeleteDialog = false
+        selectedId = -1
+    }
 
-    private fun sendUiEvent(event: UiEvent) {
-        viewModelScope.launch {
-            _uiEvent.send(event)
+    private suspend fun deleteDebt(debtId : Int) {
+        println("Debt to be deleted: $debtId")
+        val toBeDeleted = debtRepository.getDebtById(debtId)
+        if (toBeDeleted != null) {
+            debtRepository.deleteDebt(toBeDeleted)
+        } else {
+            sendUiEvent(UiEvent.ShowSnackbar("Debt not found", "Ok"))
         }
     }
 
-
+    private fun sendUiEvent(event: UiEvent) {
+        viewModelScope.launch {
+            _uiEventChannel.send(event)
+        }
+    }
 }
