@@ -9,25 +9,95 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab8fdaeb-b227-456f-84c0-9449ff6831e3" name="Changes" comment="fixing typo and adding debt class with required dependencies">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/DebtManagerApp.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/data/Debt.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/data/DebtDao.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/data/DebtDatabase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/data/DebtRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/data/DeptRepositoryImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/di/AppModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/debt_list/DebtItem.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/debt_list/DebtListEvent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/debt_list/DebtListViewModel.kt" afterDir="false" />
+    <list default="true" id="0ba80bef-fbd2-4755-945e-3f2dde47c120" name="Changes" comment="implemented Debt content provider for all debts and by id and added logo">
+      <change beforePath="$PROJECT_DIR$/.idea/debt-manager.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/.idea/androidTestResultsUserPreferences.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/androidTest/java/com/guilherme/android/debtmanager/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/androidTest/java/com/guilherme/android/debtmanager/data/DebtContentProviderTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/DebtManagerApp.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/data/Debt.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/data/DebtContentProvider.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/data/DebtDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/data/DebtDatabase.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/data/DebtRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/data/DeptRepositoryImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/di/AppModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/add_edit_debt/AddEditDebtEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/add_edit_debt/AddEditDebtScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/add_edit_debt/AddEditDebtViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/debt_list/DebtItem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/debt_list/DebtListEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/debt_list/DebtListScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/debt_list/DebtListViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/misc/DecimalTextField.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/misc/Dialog.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/misc/LineChart.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/misc/ScreenHeader.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/misc/SliderField.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/simulation/DebtSimulation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/simulation/DebtSimulationEntry.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/simulation/DebtSimulationEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/simulation/DebtSimulationScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/simulation/DebtSimulationViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/theme/Color.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/theme/Shape.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/theme/Theme.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/ui/theme/Type.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/util/Routes.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/java/com/guilherme/android/debtmanager/util/UiEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/drawable/calculate.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/drawable/debt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/app/src/test/java/com/guilherme/android/debtmanager/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dept-manager/settings.gradle" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/guilherme-mac/.android/avd/Pixel_5_API_25.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/guilherme-mac/.android/avd/Pixel_XL_API_26.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -36,19 +106,52 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Data Class" />
         <option value="Class" />
-        <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="simulation_screen" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="simulation_screen" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="implemented Debt content provider for all debts and by id and added logo" />
+        <option name="rewordedMessage" value="implemented Debt content provider for all debts and by id and added logo" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="f4cd061e30bd583b323678f538702f8a18d5af0c" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/app/build.gradle" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/src/main/res/values/themes.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/local.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/settings.gradle" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2O8PrnRbJJmsEk1TglxVRGu4hTy" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2O8VwxZRv4ZxvJboYYdHTY4z6Vv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -56,16 +159,46 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DEBUGGABLE_DEVICE&quot;: &quot;Pixel_XL_API_26 [emulator-5554]&quot;,
+    &quot;DEBUGGABLE_PROCESS&quot;: &quot;com.guilherme.android.debtmanager&quot;,
+    &quot;DEBUGGER_ID&quot;: &quot;Auto&quot;,
+    &quot;ResourceManagerPrefKey.ResourceType&quot;: &quot;MIPMAP&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SHOW_ALL_PROCESSES&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/guilherme-mac/Desktop/university/source/android/dept-manager/debt-manager&quot;,
-    &quot;memory.settings.postsync.last.time.stamp&quot;: &quot;1680939449042&quot;
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/guilherme-mac/Desktop/university/source/android/dept-manager/dept-manager/app/src/test/java/com/guilherme/android/debtmanager&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/guilherme-mac/Desktop/university/source/android/dept-manager/dept-manager/app/src/main/java/com/guilherme/android/debtmanager/util&quot;,
+    &quot;memory.settings.postsync.last.time.stamp&quot;: &quot;1681286925234&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;experimental&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/guilherme/android/debtmanager/util" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/guilherme/android/debtmanager" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/androidTest/java/com/guilherme/android/debtmanager" />
+      <recent name="$PROJECT_DIR$/app/src/test/java/com/guilherme/android/debtmanager" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.guilherme.android.debtmanager.data" />
+      <recent name="com.guilherme.android.debtmanager.ui.misc" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.guilherme.android.debtmanager.ui.debt_list" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android Instrumented Tests.DebtContentProviderTest">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="Debt_Manager.app.main" />
       <option name="DEPLOY" value="true" />
@@ -120,26 +253,321 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DebtContentProviderTest" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="Debt_Manager.app.androidTest" />
+      <option name="TESTING_TYPE" value="2" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="com.guilherme.android.debtmanager.data.DebtContentProviderTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_NAME_REGEX" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="RETENTION_ENABLED" value="No" />
+      <option name="RETENTION_MAX_SNAPSHOTS" value="2" />
+      <option name="RETENTION_COMPRESS_SNAPSHOTS" value="false" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test2()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="Debt_Manager.app.androidTest" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="CLASS_NAME" value="com.guilherme.android.debtmanager.data.DebtContentProviderTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_NAME_REGEX" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="RETENTION_ENABLED" value="No" />
+      <option name="RETENTION_MAX_SNAPSHOTS" value="2" />
+      <option name="RETENTION_COMPRESS_SNAPSHOTS" value="false" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="Debt_Manager.app.androidTest" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="CLASS_NAME" value="com.guilherme.android.debtmanager.data.DebtContentProviderTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_NAME_REGEX" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="RETENTION_ENABLED" value="No" />
+      <option name="RETENTION_MAX_SNAPSHOTS" value="2" />
+      <option name="RETENTION_COMPRESS_SNAPSHOTS" value="false" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test_query()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="Debt_Manager.app.androidTest" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="METHOD_NAME" value="test_query" />
+      <option name="CLASS_NAME" value="com.guilherme.android.debtmanager.data.DebtContentProviderTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_NAME_REGEX" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="RETENTION_ENABLED" value="No" />
+      <option name="RETENTION_MAX_SNAPSHOTS" value="2" />
+      <option name="RETENTION_COMPRESS_SNAPSHOTS" value="false" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DebtContentProviderTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+            <option value="--tests" />
+            <option value="&quot;com.guilherme.android.debtmanager.data.DebtContentProviderTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android Instrumented Tests.DebtContentProviderTest" />
+        <item itemvalue="Android Instrumented Tests.test2()" />
+        <item itemvalue="Android Instrumented Tests.test()" />
+        <item itemvalue="Gradle.DebtContentProviderTest" />
+        <item itemvalue="Android Instrumented Tests.test_query()" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ab8fdaeb-b227-456f-84c0-9449ff6831e3" name="Changes" comment="" />
-      <created>1680939437250</created>
+      <changelist id="0ba80bef-fbd2-4755-945e-3f2dde47c120" name="Changes" comment="" />
+      <created>1680942437909</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1680939437250</updated>
+      <updated>1680942437909</updated>
     </task>
-    <task id="LOCAL-00001" summary="fixing typo and adding debt class with required dependencies">
-      <created>1680941980316</created>
+    <task id="LOCAL-00001" summary="implementation of debt list and edit screens">
+      <created>1681114834698</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1680941980316</updated>
+      <updated>1681114834698</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactoring">
+      <created>1681148126028</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681148126028</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added simulation screen">
+      <created>1681158342294</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681158342294</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added simulation screen">
+      <created>1681216187864</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681216187864</updated>
+    </task>
+    <task id="LOCAL-00005" summary="extracted slider to its on component">
+      <created>1681295515093</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681295515093</updated>
+    </task>
+    <task id="LOCAL-00006" summary="extracted slider to its on component">
+      <created>1681327238669</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681327238669</updated>
+    </task>
+    <task id="LOCAL-00007" summary="implemented Debt content provider for all debts and by id and added logo">
+      <created>1681364452091</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681364452091</updated>
+    </task>
+    <task id="LOCAL-00008" summary="implemented Debt content provider for all debts and by id and added logo">
+      <created>1681364522947</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681364522947</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,14 +575,46 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixing typo and adding debt class with required dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing typo and adding debt class with required dependencies" />
+    <MESSAGE value="implementation of debt list and edit screens" />
+    <MESSAGE value="Refactoring" />
+    <MESSAGE value="added simulation screen" />
+    <MESSAGE value="extracted slider to its on component" />
+    <MESSAGE value="implemented Debt content provider for all debts and by id" />
+    <MESSAGE value="implemented Debt content provider for all debts and by id and added logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented Debt content provider for all debts and by id and added logo" />
   </component>
 </project>
