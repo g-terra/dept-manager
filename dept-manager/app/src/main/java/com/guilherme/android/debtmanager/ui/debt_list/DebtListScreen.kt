@@ -135,7 +135,7 @@ private fun DebtListContent(
     ) {
         ScreenHeader(
             modifier = Modifier,
-            title = stringResource(R.string.debts),
+            showLogo = true
         )
         DebtListContainer(debts, viewModel)
     }
