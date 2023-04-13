@@ -17,7 +17,7 @@ import org.mockito.kotlin.whenever
 @RunWith(AndroidJUnit4::class)
 class DebtContentProviderTest {
 
-    var mockDebtRepository: DebtRepository = mock()
+    private var mockDebtRepository: DebtRepository = mock()
 
     @Test
     fun should_return_list_of_debts() = runBlockingTest {
